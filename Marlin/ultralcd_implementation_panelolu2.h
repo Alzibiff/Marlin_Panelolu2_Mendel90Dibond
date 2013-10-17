@@ -180,7 +180,7 @@ Possible status screens:
        |F100%  SD100% T--:--|
        |Status line.........|
 */
-static void lcd_implementation_status_screen() //d�but affichage
+static void lcd_implementation_status_screen() //dï¿½but affichage
 {
     int tHotend=int(degHotend(0) + 0.5); //temperature hotend0 entier
     int tTarget=int(degTargetHotend(0) + 0.5); //temperature consigne0 entier
@@ -214,7 +214,7 @@ static void lcd_implementation_status_screen() //d�but affichage
     lcd.print(itostr3(tHotend)); //temperature hotend
     lcd.print('/'); //affiche separateur
     lcd.print(itostr3left(tTarget)); //temperature consigne hotend
-    lcd_printPGM(PSTR(LCD_STR_DEGREE " ")); //affiche symbole �
+    lcd_printPGM(PSTR(LCD_STR_DEGREE " ")); //affiche symbole ï¿½
     if (tTarget < 10)
         lcd.print(' ');
 
@@ -233,7 +233,7 @@ static void lcd_implementation_status_screen() //d�but affichage
     lcd.print(itostr3(tHotend)); //
     lcd.print('/'); //affiche separateur
     lcd.print(itostr3left(tTarget));
-    lcd_printPGM(PSTR(LCD_STR_DEGREE " ")); //symbole �
+    lcd_printPGM(PSTR(LCD_STR_DEGREE " ")); //symbole ï¿½
     if (tTarget < 10)
         lcd.print(' ');
 # endif//EXTRUDERS > 1 || TEMP_SENSOR_BED != 0
@@ -548,3 +548,4 @@ static void lcd_implementation_update_indicators()
 }
 
 #endif//ULTRA_LCD_IMPLEMENTATION_PANELOLU2_H
+

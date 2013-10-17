@@ -145,10 +145,10 @@
   #define PID_dT ((16.0 * 8.0)/(F_CPU / 64.0 / 256.0)) //sampling period of the temperature routine
 
 // If you are using a preconfigured hotend then you can use one of the value sets by uncommenting it
-// J-Head Mk IV-B
-    #define  DEFAULT_Kp 34.19   //***psl***
-    #define  DEFAULT_Ki 2.47    //***psl*** 
-    #define  DEFAULT_Kd 118.19  //***psl***
+// J-Head Mk V-B
+    #define  DEFAULT_Kp 25.05   //Nophead change October 2013
+    #define  DEFAULT_Ki 2.30    //ditto
+    #define  DEFAULT_Kd 68.15  //ditto
 
 // Ultimaker
 //    #define  DEFAULT_Kp 22.2  //***psl***
@@ -312,15 +312,16 @@ const bool Z_ENDSTOPS_INVERTING = false; // ***psl*** set to true to invert the 
 
 //// MOVEMENT SETTINGS
 #define NUM_AXIS 4 // The axis order in all axis related arrays is X, Y, Z, E
-#define HOMING_FEEDRATE {50*60, 50*60, 4*60, 0}  // set the homing speeds (mm/min)
+//#define HOMING_FEEDRATE {50*60, 50*60, 4*60, 0}  // set the homing speeds (mm/min) <<--- changed to below on October 2013
+#define HOMING_FEEDRATE {35*60, 35*60, 4*60, 0}  // set the homing speeds (mm/min)
 
 // default settings 
 #define DEFAULT_AXIS_STEPS_PER_UNIT   {64,64,200*16/1,E_STEPS_PER_MM}  // ***psl** Mendel90 with Wades and Stoffel15 bolt 
 //***Alan Using T5 belts for X and Y
 #define DEFAULT_MAX_FEEDRATE          {500, 500, 4, 30}    // (mm/sec) //***Alan***
-#define DEFAULT_MAX_ACCELERATION      {4000,4000,150,5000}    //***psl*** X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
+#define DEFAULT_MAX_ACCELERATION      {2000,2000,150,5000}    //***psl*** X, Y, Z, E maximum start speed for accelerated moves. E default values are good for skeinforge 40+, for older versions raise them a lot.
 
-#define DEFAULT_ACCELERATION          1000    //***Alan - original 4000 too high & gives steps - well it did with my Christmas tree, Dec 2012*** X, Y, Z and E max acceleration in mm/s^2 for printing moves 
+#define DEFAULT_ACCELERATION          2000    //***Alan - original 4000 too high & gives steps - well it did with my Christmas tree, Dec 2012*** X, Y, Z and E max acceleration in mm/s^2 for printing moves 
 #define DEFAULT_RETRACT_ACCELERATION  5000   //***psl*** X, Y, Z and E max acceleration in mm/s^2 for r retracts
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
@@ -437,4 +438,5 @@ const bool Z_ENDSTOPS_INVERTING = false; // ***psl*** set to true to invert the 
 #include "thermistortables.h"
 
 #endif //__CONFIGURATION_H
+
 
